@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="CensusPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{1E9CAA2D-9657-4286-BB67-70F65F4B2A5C}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{58077D16-914D-40D4-B7E9-27B75C6DD8A4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
             <DTS:Property
               DTS:Name="ServerPassword"
               Sensitive="1"
-              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6boxPyluCUy6ewuKiXPztwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADhh5m5cLLeBYKq/ARuRoE7SgnrS7rXx1g3ntp+YV/z8gAAAAAOgAAAAAIAACAAAACQj7RXSpxPfovpJZFi+aehs4vpMIDY65PpaQZYIkH/7xAAAABrmRD1HZ3DGCovt4kXaLwbQAAAAEM+ckXphGBV0t9qLLqnYRxAHoLKFPCTTuSbBOtf3L/vtlF5iadnkk0BHyGNOo8M/s2il6r3qNXzSiqkBLzyVpQ</DTS:Property>
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6boxPyluCUy6ewuKiXPztwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAjJ1xqw8tyPGjIkVfUhHwlhedzPW3c/DThGk1QSXwKaAAAAAAOgAAAAAIAACAAAACJvEpFbhoDUo2uoXFVFvAf9SXck9ACxMbkpN268F9SvhAAAADWz9r0OVmrwxj5CRWnMOIYQAAAAGqjL7DN0DEuHxtwYGtaMNh2cWHdfKPc9e2aYEV/Q0l2qveKSV6pf+d3HUc0IwqyKGtbVuWRcTup14WBx0VIJ84</DTS:Property>
           </DTS:FtpConnection>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
@@ -53,26 +53,36 @@
             <DTS:Property
               DTS:Name="ServerPassword"
               Sensitive="1"
-              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6boxPyluCUy6ewuKiXPztwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADLsn5uPARe5BYdX75FN1n6fyDsKztzDbXvNVhAw7yB+wAAAAAOgAAAAAIAACAAAAA1VaoKFx9UkSyoIKlJ0K5vESKG1z+mJnz7RkpiWnmEEhAAAACR5azBx5Pj+iYHyAT/duK6QAAAAFDGux4KfLEXLha+YtVBiY9z5PN3KH+5dQnVQTZL593tOTApZoc9vly+lRG6K8ELqF5us3lq1XyEwtLmPRiycyw</DTS:Property>
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6boxPyluCUy6ewuKiXPztwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA/wXhTtfGpjQ6IG7X+FXOkawcuxCwiAWkcGa1wuW8c3gAAAAAOgAAAAAIAACAAAAB8tilZzu09BFFPQk/uGubWlxF/OyjJtpVFg1oUGsBkyhAAAACvrFClQqNUr1fPrcDEqxKnQAAAAE6tuqjjp+kwacj1QEDjTa/WKMIvy9Tu26V1rS6E35p3jNH/U+sXw3sfQ8zGbguNZQX0N4jGW4wrBK/BLuh7Ilc</DTS:Property>
           </DTS:FtpConnection>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Dump FilePath]"
+      DTS:refId="Package.ConnectionManagers[Census Import]"
       DTS:CreationName="FILE"
       DTS:DTSID="{B6CA4344-CF82-43FB-BE29-53A176F473FC}"
-      DTS:ObjectName="Dump FilePath">
+      DTS:ObjectName="Census Import">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::outputDirectory]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:FileUsageType="2"
-          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackage\CensusImport" />
+          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Output" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{906B793E-EDE8-44CA-BEDB-B6D960B26948}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="current">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{70A5AD0F-AD16-4AB0-BBEA-6C0601B6CE3E}"
@@ -89,49 +99,188 @@
       DTS:Namespace="User"
       DTS:ObjectName="outputDirectory">
       <DTS:VariableValue
-        DTS:DataType="8">E:\Practice\SSIS\IntegrationPackage\CensusImport</DTS:VariableValue>
+        DTS:DataType="8">E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Output</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F43009FE-BB4F-4611-9F6C-D6A98D1D0172}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="workingDirectory">
+      <DTS:VariableValue
+        DTS:DataType="8">E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Working</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Census File 1"
+      DTS:refId="Package\Create Output Directory"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{E77CFCE5-1054-4E89-8A6E-C9D0396D4AAF}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Output Directory"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="CreateDirectory"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::outputDirectory"
+          TaskIsSourceVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Working Directory"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{38A3F7D5-6F13-4B34-A57D-E9ACDDB11128}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Working Directory"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="CreateDirectory"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::workingDirectory"
+          TaskIsSourceVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Download Census File 1"
       DTS:CreationName="Microsoft.FtpTask"
       DTS:Description="FTP Task"
       DTS:DTSID="{61CE288E-BB4C-4B34-A7AB-1B3B9DE6964E}"
       DTS:ExecutableType="Microsoft.FtpTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Census File 1"
+      DTS:ObjectName="Download Census File 1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <FtpData
           ConnectionName="{AA5E2AB1-1589-4E51-94E6-1C963C04C3D0}"
           TaskOperationType="Receive"
-          TaskLocalPath="Dump FilePath"
+          TaskLocalPath="Census Import"
           TaskRemotePath="/econ2005/CBP_CSV/cbp05prs.txt"
           TaskOverwriteDest="True" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Census File 2"
+      DTS:refId="Package\Download Census File 2"
       DTS:CreationName="Microsoft.FtpTask"
       DTS:Description="FTP Task"
       DTS:DTSID="{4565e309-da65-4d9b-b74b-aaa27711ebdc}"
       DTS:ExecutableType="Microsoft.FtpTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Census File 2"
+      DTS:ObjectName="Download Census File 2"
       DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <FtpData
           ConnectionName="{6B83D70D-6369-490B-B945-F8E9A506D292}"
           TaskOperationType="Receive"
-          TaskLocalPath="Dump FilePath"
+          TaskLocalPath="Census Import"
           TaskRemotePath="/econ2002/CBP_CSV/cbp02us.txt"
           TaskOverwriteDest="True" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Move Downloaded Files"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{CF13B9FC-75DD-4204-8881-73CBC1D0C210}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Move Downloaded Files">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{D5B80FCE-FB1E-4AAD-B981-646069C23E20}"
+        DTS:ObjectName="{D5B80FCE-FB1E-4AAD-B981-646069C23E20}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::outputDirectory]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Output" />
+            <FEFEProperty
+              FileSpec="*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Move Downloaded Files\File System Task"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DelayValidation="True"
+          DTS:Description="File System Task"
+          DTS:DTSID="{283C2A0C-70E8-4F88-BD75-5BE54D440C0E}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="File System Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::current"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::workingDirectory"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{06A86984-6B66-4570-9107-B4A57DEA1D0C}"
+          DTS:ObjectName="{06A86984-6B66-4570-9107-B4A57DEA1D0C}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::current" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{AEA77689-C3CE-417B-9F9C-CAEB95B5D7BA}"
+      DTS:From="Package\Download Census File 2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Move Downloaded Files" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{59A8F84E-AB7D-4857-BF0A-05EB1C37DC4D}"
+      DTS:From="Package\Download Census File 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Move Downloaded Files" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F5B67379-A68B-49ED-AC41-3BAA1B3DCA28}"
+      DTS:From="Package\Create Working Directory"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Move Downloaded Files" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{0A4A6281-01C0-4461-9831-03AA00D2C409}"
+      DTS:From="Package\Create Output Directory"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Download Census File 1" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -143,15 +292,184 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
-          Size="141,42"
-          Id="Package\Census File 1"
-          TopLeft="375,48" />
+          Size="191,42"
+          Id="Package\Create Output Directory"
+          TopLeft="489,37" />
         <NodeLayout
-          Size="141,42"
-          Id="Package\Census File 2"
-          TopLeft="377,132" />
+          Size="198,42"
+          Id="Package\Create Working Directory"
+          TopLeft="136,122" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Move Downloaded Files\File System Task"
+          TopLeft="27,15" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="213,112"
+          Size="213,155"
+          Id="Package\Move Downloaded Files"
+          TopLeft="305,353" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="707.5,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-261.833333333333,140"
+              Start="0,0"
+              End="-261.833333333333,132.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.3737185461323" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,79.3737185461323"
+                    Point2="0,83.3737185461323"
+                    Point3="-4,83.3737185461323" />
+                  <mssgle:LineSegment
+                    End="-257.833333333333,83.3737185461323" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-257.833333333333,83.3737185461323"
+                    Point2="-261.833333333333,83.3737185461323"
+                    Point3="-261.833333333333,87.3737185461323" />
+                  <mssgle:LineSegment
+                    End="-261.833333333333,132.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="473.5,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96.1666666666667,140"
+              Start="0,0"
+              End="-96.1666666666667,132.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.3737185461324" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,79.3737185461324"
+                    Point2="0,83.3737185461324"
+                    Point3="-4,83.3737185461324" />
+                  <mssgle:LineSegment
+                    End="-92.1666666666667,83.3737185461324" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-92.1666666666667,83.3737185461324"
+                    Point2="-96.1666666666667,83.3737185461324"
+                    Point3="-96.1666666666667,87.3737185461324" />
+                  <mssgle:LineSegment
+                    End="-96.1666666666667,132.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="235,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="176.5,189"
+              Start="0,0"
+              End="176.5,181.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,90.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,90.5"
+                    Point2="0,94.5"
+                    Point3="4,94.5" />
+                  <mssgle:LineSegment
+                    End="172.5,94.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="172.5,94.5"
+                    Point2="176.5,94.5"
+                    Point3="176.5,98.5" />
+                  <mssgle:LineSegment
+                    End="176.5,181.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="584.5,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111,92"
+              Start="0,0"
+              End="-111,84.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42"
+                    Point2="0,46"
+                    Point3="-4,46" />
+                  <mssgle:LineSegment
+                    End="-107,46" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-107,46"
+                    Point2="-111,46"
+                    Point3="-111,50" />
+                  <mssgle:LineSegment
+                    End="-111,84.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Download Census File 1"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Download Census File 2"
+          TopLeft="240.5,6.5" />
+        <GroupLayout
+          Text="Download Census"
+          ParentId="Package"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="436,104"
+          Size="436,147"
+          Id="f5a468fe-6e44-45ef-9f3d-9bba67f9325f"
+          TopLeft="372.5,121.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Download Census File 1</s:String>
+            <s:String>Package\Download Census File 2</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
