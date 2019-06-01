@@ -11,27 +11,18 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="CensusPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{02F5C5DB-4B35-40E7-99BE-06D59057D209}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{1E9CAA2D-9657-4286-BB67-70F65F4B2A5C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Dump]"
-      DTS:CreationName="FILE"
-      DTS:DTSID="{B6CA4344-CF82-43FB-BE29-53A176F473FC}"
-      DTS:ObjectName="Dump">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:FileUsageType="2"
-          DTS:ConnectionString="E:\Practice\SSIS\Dump" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[FTP Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[Census FTP Connection Manager 1]"
       DTS:CreationName="FTP"
       DTS:DTSID="{AA5E2AB1-1589-4E51-94E6-1C963C04C3D0}"
-      DTS:ObjectName="FTP Connection Manager">
+      DTS:ObjectName="Census FTP Connection Manager 1">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ftpSite]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="ftp2.census.gov:21">
@@ -41,13 +32,66 @@
             <DTS:Property
               DTS:Name="ServerPassword"
               Sensitive="1"
-              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6boxPyluCUy6ewuKiXPztwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADcIpLeRy/yorHg9TBu89mXzlh0iohNJIiSUyVGXj9N9gAAAAAOgAAAAAIAACAAAAAktOab2riRjeMayIbln+oO9Xrd07/XTFgbvbIynb32WhAAAAAmV7Mh5hAotlGdzT8nR+UhQAAAAEj4hEskRpnCBGoAmD3gnS1w2ma7PYiqg8RyZRUOciaIgLqu6dmb0BVUoUI9XXp3u9Z1zYzx06UvBwSiDmqo5a4</DTS:Property>
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6boxPyluCUy6ewuKiXPztwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADhh5m5cLLeBYKq/ARuRoE7SgnrS7rXx1g3ntp+YV/z8gAAAAAOgAAAAAIAACAAAACQj7RXSpxPfovpJZFi+aehs4vpMIDY65PpaQZYIkH/7xAAAABrmRD1HZ3DGCovt4kXaLwbQAAAAEM+ckXphGBV0t9qLLqnYRxAHoLKFPCTTuSbBOtf3L/vtlF5iadnkk0BHyGNOo8M/s2il6r3qNXzSiqkBLzyVpQ</DTS:Property>
           </DTS:FtpConnection>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Census FTP Connection Manager 2]"
+      DTS:CreationName="FTP"
+      DTS:DTSID="{6B83D70D-6369-490B-B945-F8E9A506D292}"
+      DTS:ObjectName="Census FTP Connection Manager 2">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ftpSite]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="ftp2.census.gov:21">
+          <DTS:FtpConnection
+            DTS:ServerName="ftp2.census.gov"
+            DTS:ServerUserName="anonymous">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6boxPyluCUy6ewuKiXPztwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADLsn5uPARe5BYdX75FN1n6fyDsKztzDbXvNVhAw7yB+wAAAAAOgAAAAAIAACAAAAA1VaoKFx9UkSyoIKlJ0K5vESKG1z+mJnz7RkpiWnmEEhAAAACR5azBx5Pj+iYHyAT/duK6QAAAAFDGux4KfLEXLha+YtVBiY9z5PN3KH+5dQnVQTZL593tOTApZoc9vly+lRG6K8ELqF5us3lq1XyEwtLmPRiycyw</DTS:Property>
+          </DTS:FtpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dump FilePath]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{B6CA4344-CF82-43FB-BE29-53A176F473FC}"
+      DTS:ObjectName="Dump FilePath">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::outputDirectory]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackage\CensusImport" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{70A5AD0F-AD16-4AB0-BBEA-6C0601B6CE3E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ftpSite">
+      <DTS:VariableValue
+        DTS:DataType="8">ftp2.census.gov:21</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EE731717-ED59-4609-A719-234233A81FC9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="outputDirectory">
+      <DTS:VariableValue
+        DTS:DataType="8">E:\Practice\SSIS\IntegrationPackage\CensusImport</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Census File 1"
@@ -63,7 +107,7 @@
         <FtpData
           ConnectionName="{AA5E2AB1-1589-4E51-94E6-1C963C04C3D0}"
           TaskOperationType="Receive"
-          TaskLocalPath="Dump"
+          TaskLocalPath="Dump FilePath"
           TaskRemotePath="/econ2005/CBP_CSV/cbp05prs.txt"
           TaskOverwriteDest="True" />
       </DTS:ObjectData>
@@ -76,28 +120,18 @@
       DTS:ExecutableType="Microsoft.FtpTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Census File 2"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <FtpData
-          ConnectionName="{AA5E2AB1-1589-4E51-94E6-1C963C04C3D0}"
+          ConnectionName="{6B83D70D-6369-490B-B945-F8E9A506D292}"
           TaskOperationType="Receive"
-          TaskLocalPath="Dump"
+          TaskLocalPath="Dump FilePath"
           TaskRemotePath="/econ2002/CBP_CSV/cbp02us.txt"
           TaskOverwriteDest="True" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{79DAB73E-72F9-47E9-92EF-05E9BDFDBABB}"
-      DTS:From="Package\Census File 1"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\Census File 2" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -109,7 +143,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="141,42"
           Id="Package\Census File 1"
@@ -118,28 +152,6 @@
           Size="141,42"
           Id="Package\Census File 2"
           TopLeft="377,132" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="446.5,90">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
