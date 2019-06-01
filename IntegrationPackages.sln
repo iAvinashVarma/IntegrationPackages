@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CensusIntegration", "CensusIntegration\CensusIntegration.dtproj", "{21DBD8AB-4B26-45C4-90FA-F2BC52523AC8}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "FileIntegration", "FileIntegration\FileIntegration.dtproj", "{DFA4F2EF-A914-4A83-8070-ED7C7541B863}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -12,6 +14,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{21DBD8AB-4B26-45C4-90FA-F2BC52523AC8}.Development|Default.ActiveCfg = Development
 		{21DBD8AB-4B26-45C4-90FA-F2BC52523AC8}.Development|Default.Build.0 = Development
+		{DFA4F2EF-A914-4A83-8070-ED7C7541B863}.Development|Default.ActiveCfg = Development
+		{DFA4F2EF-A914-4A83-8070-ED7C7541B863}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

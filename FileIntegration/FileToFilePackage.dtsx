@@ -1,0 +1,1177 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/1/2019 3:54:11 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SUNIL-PC"
+  DTS:CreatorName="SUNIL-PC\Sunil"
+  DTS:DTSID="{70A73B97-BD2F-4211-8DA2-E105CB88A78B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1300.371"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="FileToFilePackage"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{1E9B15A3-9A8E-4D06-877B-512821DD52C5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Input Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{61F00FF6-4690-4616-BA9B-1543C3595C47}"
+      DTS:ObjectName="Input Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Working\cbp05prs.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;fipstate&quot;"
+              DTS:DTSID="{014E6989-3B97-405C-ACEC-A39716F216E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;naics&quot;"
+              DTS:DTSID="{5A5510E5-4A1A-4206-8F41-3169350F7658}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;empflag&quot;"
+              DTS:DTSID="{9F60E1C2-B186-4FF8-8754-C466CD95C825}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;emp&quot;"
+              DTS:DTSID="{F76A899E-B006-4A44-98F3-7C44BE8EDD75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;qp1&quot;"
+              DTS:DTSID="{6EAD5E01-92AD-4BEA-8BB0-164208F72FD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;ap&quot;"
+              DTS:DTSID="{792F1162-9410-41B3-A10F-FBB9B1194246}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;est&quot;"
+              DTS:DTSID="{A9F53148-7161-40AE-9FB9-5F437D2594FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;f1_4&quot;"
+              DTS:DTSID="{CFAB8E3A-9FCF-4639-9FC2-F9930868FCA2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e1_4&quot;"
+              DTS:DTSID="{D8C6A946-2689-4E71-9E30-4DD9364C6EC4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;q1_4&quot;"
+              DTS:DTSID="{F43DA128-D147-49EA-AD88-9FDF424FD8AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;a1_4&quot;"
+              DTS:DTSID="{1D8BA9E5-8BCE-4203-93B3-28873AF0E691}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;n1_4&quot;"
+              DTS:DTSID="{59A47B40-3F88-4666-ACF6-346B82CA2183}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;f5_9&quot;"
+              DTS:DTSID="{2BCCFF93-2AA8-4703-9822-070FF8FC8AA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e5_9&quot;"
+              DTS:DTSID="{F5AEE30D-E50A-4361-8544-88D9E8176F2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;q5_9&quot;"
+              DTS:DTSID="{EA3B2E98-294E-4583-94CC-EFCD065DDC41}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;a5_9&quot;"
+              DTS:DTSID="{F0AF8A94-1DA9-429B-AD6A-E3C6DA50F193}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;n5_9&quot;"
+              DTS:DTSID="{5B3759FF-50E0-4724-8BAA-96C0B64A581B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;f10_19&quot;"
+              DTS:DTSID="{9C8B35C7-E76E-4D2A-9F47-03A93CA68A43}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e10_19&quot;"
+              DTS:DTSID="{CF0007CC-69AB-4263-978C-31015526233C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;q10_19&quot;"
+              DTS:DTSID="{69B7CDDD-E3EC-43EF-80E1-E7BBCBC16924}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;a10_19&quot;"
+              DTS:DTSID="{344BD33C-9866-46F2-9A52-5C29B13A90EA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;n10_19&quot;"
+              DTS:DTSID="{B3E8EAFC-3F10-4406-B0EA-9B1B1185BE71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;f20_49&quot;"
+              DTS:DTSID="{9029560C-4131-41D0-BEF9-B38195509B9A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e20_49&quot;"
+              DTS:DTSID="{80BC3218-4065-4E2A-A0FB-EE38888AD031}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;q20_49&quot;"
+              DTS:DTSID="{F2868827-4E67-4CB4-9F26-C48694BFAB45}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;a20_49&quot;"
+              DTS:DTSID="{9AB8F7F5-F46E-4E10-9E89-6C61D81DFFD6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;n20_49&quot;"
+              DTS:DTSID="{A338F535-DCB9-4045-AF41-C6770C8B52D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;f50_99&quot;"
+              DTS:DTSID="{1F60E0C5-CEB6-460B-8A5C-65EC3E633416}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e50_99&quot;"
+              DTS:DTSID="{4B084716-97AF-45C0-AC02-FC4326BBE31C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;q50_99&quot;"
+              DTS:DTSID="{EFE388AD-4AE6-4A71-AF33-E875DFCD1874}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;a50_99&quot;"
+              DTS:DTSID="{A3741493-E15B-41AC-8CEE-698529DD4F35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;n50_99&quot;"
+              DTS:DTSID="{04CAA889-4DE2-41A0-A39C-E7170EE6B478}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;f100_249&quot;"
+              DTS:DTSID="{AB57A10C-632A-4B1F-AD90-C3AD49FB9BEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e100_249&quot;"
+              DTS:DTSID="{8244CD1E-2CD2-48D2-9984-C7CD87017A95}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;q100_249&quot;"
+              DTS:DTSID="{0C34FE57-FA56-4564-B1AD-2F017258B50C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;a100_249&quot;"
+              DTS:DTSID="{462540D6-BF8B-4FEC-8B0D-4CC4FCAFE593}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;n100_249&quot;"
+              DTS:DTSID="{204F6FEC-0D6E-4612-81CA-9CF7B24243FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;f250_499&quot;"
+              DTS:DTSID="{60796C00-C0CD-41DA-8A8E-787F3A665EED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e250_499&quot;"
+              DTS:DTSID="{842A1C26-44B3-41E1-BFE8-E070520F3D3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;q250_499&quot;"
+              DTS:DTSID="{29ADC562-0D1A-4224-AAA4-8587E120C02F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;a250_499&quot;"
+              DTS:DTSID="{318D7438-A642-4755-BBDF-1F09208CC923}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;n250_499&quot;"
+              DTS:DTSID="{71D68B92-2E10-418F-B865-AEC49232A38A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;f500_999&quot;"
+              DTS:DTSID="{01AE2F5F-503A-4A0C-B12C-BD2EBD18B7DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e500_999&quot;"
+              DTS:DTSID="{802541D2-2492-4B96-9ACB-D94A88705BD5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;q500_999&quot;"
+              DTS:DTSID="{6F0C1564-F41D-4144-82E8-5FB682CC10F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;a500_999&quot;"
+              DTS:DTSID="{4D7A146C-75D1-421C-BAA7-B79DDD0E2B2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;n500_999&quot;"
+              DTS:DTSID="{6471AF20-7EF8-4512-92DA-F22C6D2386B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;f1000&quot;"
+              DTS:DTSID="{97C9E465-D3CB-4D7E-8210-29FC86CEB0D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e1000&quot;"
+              DTS:DTSID="{66BB65C3-44FB-4525-AD82-89F351C42650}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;q1000&quot;"
+              DTS:DTSID="{7D0A0039-0445-4F96-B833-4B7681096351}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;a1000&quot;"
+              DTS:DTSID="{F98DB67A-C9EA-439A-BF30-6779561C8E41}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;n1000&quot;"
+              DTS:DTSID="{C68DFEBC-3E17-4B71-BDD0-E759684899E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;censtate&quot;"
+              DTS:DTSID="{92624F8D-2A95-4E43-87B2-89A7DEAAB767}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Output Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9670F53B-BE75-427E-871C-1CE955A2FC8E}"
+      DTS:ObjectName="Output Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Output\cbp05prs.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;fipstate&quot;"
+              DTS:DTSID="{AD817085-2FC8-4BED-BC19-37995555CD10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;naics&quot;"
+              DTS:DTSID="{9B00565A-BF9D-4992-99E0-533D1A1BA6C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;empflag&quot;"
+              DTS:DTSID="{3B34C0DF-D39B-4775-8596-01C996845D23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;emp&quot;"
+              DTS:DTSID="{8EC87843-A456-49CB-9AE7-B2CF44A32473}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;qp1&quot;"
+              DTS:DTSID="{D7418370-0322-4A57-8CBE-E26B617B879F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;ap&quot;"
+              DTS:DTSID="{730E7DDE-CD9C-4C8C-86E9-98AD1AB6C9A6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EDEF1534-EF9F-4E2E-BB2E-11D06C269625}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="16393"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Output Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Output Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;empflag&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="&quot;empflag&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;empflag&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;empflag&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;emp&quot;]"
+                      cachedDataType="i8"
+                      cachedName="&quot;emp&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;emp&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;emp&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;qp1&quot;]"
+                      cachedDataType="i8"
+                      cachedName="&quot;qp1&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;qp1&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;qp1&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;ap&quot;]"
+                      cachedDataType="i8"
+                      cachedName="&quot;ap&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;ap&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ap&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;fipstate&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="&quot;fipstate&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;naics&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;fipstate&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;naics&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="&quot;naics&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;fipstate&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;naics&quot;]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;fipstate&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="&quot;fipstate&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;naics&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="&quot;naics&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;empflag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;empflag&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;emp&quot;]"
+                      dataType="i8"
+                      name="&quot;emp&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;qp1&quot;]"
+                      dataType="i8"
+                      name="&quot;qp1&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;ap&quot;]"
+                      dataType="i8"
+                      name="&quot;ap&quot;" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Input Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="16393"
+              name="Input Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Input Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Input Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Input Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;fipstate&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;fipstate&quot;]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;fipstate&quot;]"
+                      name="&quot;fipstate&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;naics&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;naics&quot;]"
+                      length="8"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;naics&quot;]"
+                      name="&quot;naics&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;empflag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;empflag&quot;]"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;empflag&quot;]"
+                      name="&quot;empflag&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;emp&quot;]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;emp&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;emp&quot;]"
+                      name="&quot;emp&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;qp1&quot;]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;qp1&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;qp1&quot;]"
+                      name="&quot;qp1&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ap&quot;]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;ap&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ap&quot;]"
+                      name="&quot;ap&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;fipstate&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="&quot;fipstate&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;naics&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="&quot;naics&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;empflag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;empflag&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;emp&quot;]"
+                      dataType="i8"
+                      name="&quot;emp&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;qp1&quot;]"
+                      dataType="i8"
+                      name="&quot;qp1&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;ap&quot;]"
+                      dataType="i8"
+                      name="&quot;ap&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;est&quot;]"
+                      dataType="i8"
+                      name="&quot;est&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;f1_4&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;f1_4&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e1_4&quot;]"
+                      dataType="i8"
+                      name="&quot;e1_4&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;q1_4&quot;]"
+                      dataType="i8"
+                      name="&quot;q1_4&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;a1_4&quot;]"
+                      dataType="i8"
+                      name="&quot;a1_4&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;n1_4&quot;]"
+                      dataType="i8"
+                      name="&quot;n1_4&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;f5_9&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;f5_9&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e5_9&quot;]"
+                      dataType="i8"
+                      name="&quot;e5_9&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;q5_9&quot;]"
+                      dataType="i8"
+                      name="&quot;q5_9&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;a5_9&quot;]"
+                      dataType="i8"
+                      name="&quot;a5_9&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;n5_9&quot;]"
+                      dataType="i8"
+                      name="&quot;n5_9&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;f10_19&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;f10_19&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e10_19&quot;]"
+                      dataType="i8"
+                      name="&quot;e10_19&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;q10_19&quot;]"
+                      dataType="i8"
+                      name="&quot;q10_19&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;a10_19&quot;]"
+                      dataType="i8"
+                      name="&quot;a10_19&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;n10_19&quot;]"
+                      dataType="i8"
+                      name="&quot;n10_19&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;f20_49&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;f20_49&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e20_49&quot;]"
+                      dataType="i8"
+                      name="&quot;e20_49&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;q20_49&quot;]"
+                      dataType="i8"
+                      name="&quot;q20_49&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;a20_49&quot;]"
+                      dataType="i8"
+                      name="&quot;a20_49&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;n20_49&quot;]"
+                      dataType="i8"
+                      name="&quot;n20_49&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;f50_99&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;f50_99&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e50_99&quot;]"
+                      dataType="i8"
+                      name="&quot;e50_99&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;q50_99&quot;]"
+                      dataType="i8"
+                      name="&quot;q50_99&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;a50_99&quot;]"
+                      dataType="i8"
+                      name="&quot;a50_99&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;n50_99&quot;]"
+                      dataType="i8"
+                      name="&quot;n50_99&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;f100_249&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;f100_249&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e100_249&quot;]"
+                      dataType="i8"
+                      name="&quot;e100_249&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;q100_249&quot;]"
+                      dataType="i8"
+                      name="&quot;q100_249&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;a100_249&quot;]"
+                      dataType="i8"
+                      name="&quot;a100_249&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;n100_249&quot;]"
+                      dataType="i8"
+                      name="&quot;n100_249&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;f250_499&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;f250_499&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e250_499&quot;]"
+                      dataType="i8"
+                      name="&quot;e250_499&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;q250_499&quot;]"
+                      dataType="i8"
+                      name="&quot;q250_499&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;a250_499&quot;]"
+                      dataType="i8"
+                      name="&quot;a250_499&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;n250_499&quot;]"
+                      dataType="i8"
+                      name="&quot;n250_499&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;f500_999&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;f500_999&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e500_999&quot;]"
+                      dataType="i8"
+                      name="&quot;e500_999&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;q500_999&quot;]"
+                      dataType="i8"
+                      name="&quot;q500_999&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;a500_999&quot;]"
+                      dataType="i8"
+                      name="&quot;a500_999&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;n500_999&quot;]"
+                      dataType="i8"
+                      name="&quot;n500_999&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;f1000&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;f1000&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e1000&quot;]"
+                      dataType="i8"
+                      name="&quot;e1000&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;q1000&quot;]"
+                      dataType="i8"
+                      name="&quot;q1000&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;a1000&quot;]"
+                      dataType="i8"
+                      name="&quot;a1000&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;n1000&quot;]"
+                      dataType="i8"
+                      name="&quot;n1000&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;censtate&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="&quot;censtate&quot;" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Data Flow Task\Input Flat File Source"
+          TopLeft="439,81" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Data Flow Task\Flat File Destination"
+          TopLeft="445,186" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="530,123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,19.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
