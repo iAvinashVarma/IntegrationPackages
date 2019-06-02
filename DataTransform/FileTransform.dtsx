@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="FileTransform"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{07F08165-7157-422B-826F-5EDB41FC929D}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{8FD1BC1E-7832-4820-8C31-97B95A290046}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1595,13 +1595,21 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,42"
-          Id="Package\Data Flow Task\Conditional Split"
-          TopLeft="434,172" />
+          Size="222,42"
+          Id="Package\Data Flow Task\Threshold Flat File Destination"
+          TopLeft="401,271" />
         <NodeLayout
           Size="196,42"
           Id="Package\Data Flow Task\Zero Flat File Destination"
           TopLeft="109,271" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="434,172" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Data Flow Task\Everything Flat File Destination"
+          TopLeft="701,268" />
         <NodeLayout
           Size="180,42"
           Id="Package\Data Flow Task\Input Flat File Source"
@@ -1638,7 +1646,31 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-145.55068359375,33.5,38.6013671875,16"
+              BoundingBox="-136.90419921875,33.5,21.3083984375,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Threshold]"
+          TopLeft="511.75,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-22.45408203125,19.87548828125,44.9081640625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1664,10 +1696,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="225,42"
-          Id="Package\Data Flow Task\Everything Flat File Destination"
-          TopLeft="701,268" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Everything Else]"
           TopLeft="557,214">
@@ -1700,35 +1728,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="85.13,32.9310344827586,86.24,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="222,42"
-          Id="Package\Data Flow Task\Threshold Flat File Destination"
-          TopLeft="401,271" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Threshold]"
-          TopLeft="511.75,214">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.951640625,16.75,61.90328125,16"
+              BoundingBox="93.99865234375,32.9310344827586,68.5026953125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
