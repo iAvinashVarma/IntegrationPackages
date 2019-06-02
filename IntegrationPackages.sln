@@ -7,6 +7,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CensusIntegration", "Census
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "FileIntegration", "FileIntegration\FileIntegration.dtproj", "{DFA4F2EF-A914-4A83-8070-ED7C7541B863}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "DataTransform", "DataTransform\DataTransform.dtproj", "{9DC9F640-16CE-4042-B660-5F30A98F2221}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -16,6 +18,8 @@ Global
 		{21DBD8AB-4B26-45C4-90FA-F2BC52523AC8}.Development|Default.Build.0 = Development
 		{DFA4F2EF-A914-4A83-8070-ED7C7541B863}.Development|Default.ActiveCfg = Development
 		{DFA4F2EF-A914-4A83-8070-ED7C7541B863}.Development|Default.Build.0 = Development
+		{9DC9F640-16CE-4042-B660-5F30A98F2221}.Development|Default.ActiveCfg = Development
+		{9DC9F640-16CE-4042-B660-5F30A98F2221}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

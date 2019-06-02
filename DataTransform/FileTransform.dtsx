@@ -1,25 +1,89 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="6/1/2019 3:54:11 PM"
+  DTS:CreationDate="6/2/2019 9:34:02 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SUNIL-PC"
   DTS:CreatorName="SUNIL-PC\Sunil"
-  DTS:DTSID="{70A73B97-BD2F-4211-8DA2-E105CB88A78B}"
+  DTS:DTSID="{34CD8FB2-C816-4A44-9D7F-EE4225890B4F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1300.371"
   DTS:LocaleID="16393"
-  DTS:ObjectName="FileToFilePackage"
+  DTS:ObjectName="FileTransform"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{7187A608-8E49-4B68-96B2-C36A08437A3D}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{07F08165-7157-422B-826F-5EDB41FC929D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Everything Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7FFFDCA3-0F43-4036-AF37-AA35D9F13DDE}"
+      DTS:ObjectName="Everything Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::everythingFilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackages\DataTransform\Output\Everything.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;uscode&quot;"
+              DTS:DTSID="{172993F2-BF0B-4F85-8D68-68E828D4E125}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;naics&quot;"
+              DTS:DTSID="{B6D19589-0212-4CFB-86DE-58403BAADB06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;empflag&quot;"
+              DTS:DTSID="{BD3E761C-66AE-4F58-8258-2135120E70D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;emp&quot;"
+              DTS:DTSID="{45344CF3-3132-4886-875B-0323D770E394}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e1_4&quot;"
+              DTS:DTSID="{F7B7C447-2DAE-42C5-8D2D-2D2EBBBAFB43}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Input Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{61F00FF6-4690-4616-BA9B-1543C3595C47}"
+      DTS:DTSID="{71F95041-6FD9-4450-AA71-C9CB679341EB}"
       DTS:ObjectName="Input Flat File Connection Manager">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::inputFilePath]</DTS:PropertyExpression>
@@ -32,7 +96,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Working\cbp05prs.txt">
+          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Working\cbp02us.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -40,8 +104,8 @@
               DTS:MaximumWidth="4"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="&quot;fipstate&quot;"
-              DTS:DTSID="{014E6989-3B97-405C-ACEC-A39716F216E4}"
+              DTS:ObjectName="&quot;uscode&quot;"
+              DTS:DTSID="{ADFC5D10-4AC2-4CB6-89F8-D3CF12E3AE10}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +114,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;naics&quot;"
-              DTS:DTSID="{5A5510E5-4A1A-4206-8F41-3169350F7658}"
+              DTS:DTSID="{3D03439E-829C-4563-A760-6CD81213D370}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +123,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;empflag&quot;"
-              DTS:DTSID="{9F60E1C2-B186-4FF8-8754-C466CD95C825}"
+              DTS:DTSID="{BBEB057E-D89A-49DA-B3D1-57C42662FF8E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +131,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;emp&quot;"
-              DTS:DTSID="{F76A899E-B006-4A44-98F3-7C44BE8EDD75}"
+              DTS:DTSID="{A06D24FC-55B3-416F-A21D-BAF01B3FDB22}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +139,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;qp1&quot;"
-              DTS:DTSID="{6EAD5E01-92AD-4BEA-8BB0-164208F72FD0}"
+              DTS:DTSID="{847F1484-330C-4FCD-AA17-551CF52EE0BA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -83,7 +147,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ap&quot;"
-              DTS:DTSID="{792F1162-9410-41B3-A10F-FBB9B1194246}"
+              DTS:DTSID="{E7C6D4EA-CEF6-4B36-BD54-50D3E0C3887A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +155,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;est&quot;"
-              DTS:DTSID="{A9F53148-7161-40AE-9FB9-5F437D2594FD}"
+              DTS:DTSID="{9C1BEE4E-5B4A-4551-B224-15CFA0C24F8F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -100,7 +164,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;f1_4&quot;"
-              DTS:DTSID="{CFAB8E3A-9FCF-4639-9FC2-F9930868FCA2}"
+              DTS:DTSID="{5DB22698-F7B0-4C5E-96F4-C97C73F7F724}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -108,7 +172,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;e1_4&quot;"
-              DTS:DTSID="{D8C6A946-2689-4E71-9E30-4DD9364C6EC4}"
+              DTS:DTSID="{8FE34496-CF14-4CDE-ABD4-741217FE9596}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -116,7 +180,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;q1_4&quot;"
-              DTS:DTSID="{F43DA128-D147-49EA-AD88-9FDF424FD8AE}"
+              DTS:DTSID="{D3382E07-F423-4041-9570-C8172DDF125B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -124,7 +188,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;a1_4&quot;"
-              DTS:DTSID="{1D8BA9E5-8BCE-4203-93B3-28873AF0E691}"
+              DTS:DTSID="{658B0A8F-9486-45B2-9AD4-53EAB5986453}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -132,7 +196,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;n1_4&quot;"
-              DTS:DTSID="{59A47B40-3F88-4666-ACF6-346B82CA2183}"
+              DTS:DTSID="{61F22F35-CB1F-4EDD-84E1-01BC33F5E290}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -141,7 +205,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;f5_9&quot;"
-              DTS:DTSID="{2BCCFF93-2AA8-4703-9822-070FF8FC8AA7}"
+              DTS:DTSID="{4548F805-36B7-4072-BCDF-4F9CDCA45F2A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +213,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;e5_9&quot;"
-              DTS:DTSID="{F5AEE30D-E50A-4361-8544-88D9E8176F2B}"
+              DTS:DTSID="{C80361B0-A4ED-4643-948C-BCF3E69E0027}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -157,7 +221,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;q5_9&quot;"
-              DTS:DTSID="{EA3B2E98-294E-4583-94CC-EFCD065DDC41}"
+              DTS:DTSID="{4549FAA0-F630-4306-847C-550C36C63FEA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -165,7 +229,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;a5_9&quot;"
-              DTS:DTSID="{F0AF8A94-1DA9-429B-AD6A-E3C6DA50F193}"
+              DTS:DTSID="{570DD9C4-68B7-433E-A61F-F3A00A2A6826}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -173,7 +237,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;n5_9&quot;"
-              DTS:DTSID="{5B3759FF-50E0-4724-8BAA-96C0B64A581B}"
+              DTS:DTSID="{699BA89E-9B37-4F2D-ABD2-C17EEF8A4302}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -182,7 +246,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;f10_19&quot;"
-              DTS:DTSID="{9C8B35C7-E76E-4D2A-9F47-03A93CA68A43}"
+              DTS:DTSID="{CC0E09DD-48F0-4406-BB53-391A59606330}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -190,7 +254,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;e10_19&quot;"
-              DTS:DTSID="{CF0007CC-69AB-4263-978C-31015526233C}"
+              DTS:DTSID="{5330D202-2AF9-4762-920D-B87454FBBAA9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -198,7 +262,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;q10_19&quot;"
-              DTS:DTSID="{69B7CDDD-E3EC-43EF-80E1-E7BBCBC16924}"
+              DTS:DTSID="{2B775E6A-683B-42E0-8F86-7C2EF4DC98AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -206,7 +270,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;a10_19&quot;"
-              DTS:DTSID="{344BD33C-9866-46F2-9A52-5C29B13A90EA}"
+              DTS:DTSID="{45EB7543-369E-457F-91FC-61D4DA38602C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -214,7 +278,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;n10_19&quot;"
-              DTS:DTSID="{B3E8EAFC-3F10-4406-B0EA-9B1B1185BE71}"
+              DTS:DTSID="{5CB85F2F-D2DF-486F-82BC-44D3E25EAB09}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -223,7 +287,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;f20_49&quot;"
-              DTS:DTSID="{9029560C-4131-41D0-BEF9-B38195509B9A}"
+              DTS:DTSID="{94B7EB0D-7BA4-40E5-8795-9859BD4AC66F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -231,7 +295,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;e20_49&quot;"
-              DTS:DTSID="{80BC3218-4065-4E2A-A0FB-EE38888AD031}"
+              DTS:DTSID="{AF01AE8B-6F68-4B33-9882-21004A57C302}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -239,7 +303,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;q20_49&quot;"
-              DTS:DTSID="{F2868827-4E67-4CB4-9F26-C48694BFAB45}"
+              DTS:DTSID="{053DE6EA-91B7-4E67-92AB-824672837502}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -247,7 +311,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;a20_49&quot;"
-              DTS:DTSID="{9AB8F7F5-F46E-4E10-9E89-6C61D81DFFD6}"
+              DTS:DTSID="{DB9AD4AF-F460-4603-BB88-8ED4550B16E3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -255,7 +319,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;n20_49&quot;"
-              DTS:DTSID="{A338F535-DCB9-4045-AF41-C6770C8B52D1}"
+              DTS:DTSID="{44FA6376-1A67-408C-9F6B-943BECF1FE6A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -264,7 +328,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;f50_99&quot;"
-              DTS:DTSID="{1F60E0C5-CEB6-460B-8A5C-65EC3E633416}"
+              DTS:DTSID="{4B069B27-CF0D-489F-9724-C54DFA1A7BC4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -272,7 +336,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;e50_99&quot;"
-              DTS:DTSID="{4B084716-97AF-45C0-AC02-FC4326BBE31C}"
+              DTS:DTSID="{229E45E2-7046-48D5-9EAB-3193E61DB9E8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -280,7 +344,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;q50_99&quot;"
-              DTS:DTSID="{EFE388AD-4AE6-4A71-AF33-E875DFCD1874}"
+              DTS:DTSID="{FE20B4FA-27E1-438A-A420-E1B71CE1BB20}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -288,7 +352,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;a50_99&quot;"
-              DTS:DTSID="{A3741493-E15B-41AC-8CEE-698529DD4F35}"
+              DTS:DTSID="{1DDF59AC-5BC4-40BC-AE49-E90E4EF76640}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -296,7 +360,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;n50_99&quot;"
-              DTS:DTSID="{04CAA889-4DE2-41A0-A39C-E7170EE6B478}"
+              DTS:DTSID="{846A5EA9-8B96-4CC5-9CEF-D659B65110E4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -305,7 +369,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;f100_249&quot;"
-              DTS:DTSID="{AB57A10C-632A-4B1F-AD90-C3AD49FB9BEB}"
+              DTS:DTSID="{7981EB0B-4797-4479-A050-89184E52FEAA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -313,7 +377,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;e100_249&quot;"
-              DTS:DTSID="{8244CD1E-2CD2-48D2-9984-C7CD87017A95}"
+              DTS:DTSID="{5558320D-B9C9-4464-BEC6-F6765F0F7460}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -321,7 +385,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;q100_249&quot;"
-              DTS:DTSID="{0C34FE57-FA56-4564-B1AD-2F017258B50C}"
+              DTS:DTSID="{470EDA56-CCAF-4148-B82D-1A7EDD51D193}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -329,7 +393,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;a100_249&quot;"
-              DTS:DTSID="{462540D6-BF8B-4FEC-8B0D-4CC4FCAFE593}"
+              DTS:DTSID="{F77FD5E5-3EF9-4713-B9C4-DCC5BEE8E02C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -337,7 +401,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;n100_249&quot;"
-              DTS:DTSID="{204F6FEC-0D6E-4612-81CA-9CF7B24243FF}"
+              DTS:DTSID="{6EFBACBE-82E6-466A-8251-8D5A608DEF6C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -346,7 +410,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;f250_499&quot;"
-              DTS:DTSID="{60796C00-C0CD-41DA-8A8E-787F3A665EED}"
+              DTS:DTSID="{058A9FD8-638B-4F91-A3B5-47C88F3DF88A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -354,7 +418,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;e250_499&quot;"
-              DTS:DTSID="{842A1C26-44B3-41E1-BFE8-E070520F3D3D}"
+              DTS:DTSID="{8661D17B-F050-4EBD-9CA4-0D8B34DA9855}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -362,7 +426,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;q250_499&quot;"
-              DTS:DTSID="{29ADC562-0D1A-4224-AAA4-8587E120C02F}"
+              DTS:DTSID="{38511D07-8C51-42CB-87FD-E97C434EFB9F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -370,7 +434,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;a250_499&quot;"
-              DTS:DTSID="{318D7438-A642-4755-BBDF-1F09208CC923}"
+              DTS:DTSID="{4660F7DE-0E5B-4E8C-9460-B9BAB861CBDF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -378,7 +442,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;n250_499&quot;"
-              DTS:DTSID="{71D68B92-2E10-418F-B865-AEC49232A38A}"
+              DTS:DTSID="{2C183C27-FF8F-40DB-8EC4-B1FAE8FB17BA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -387,7 +451,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;f500_999&quot;"
-              DTS:DTSID="{01AE2F5F-503A-4A0C-B12C-BD2EBD18B7DD}"
+              DTS:DTSID="{2B109A90-77FF-4678-842B-104224CEBF8F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -395,7 +459,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;e500_999&quot;"
-              DTS:DTSID="{802541D2-2492-4B96-9ACB-D94A88705BD5}"
+              DTS:DTSID="{922F5CE8-6B95-4D72-8541-24F5B668A082}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -403,7 +467,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;q500_999&quot;"
-              DTS:DTSID="{6F0C1564-F41D-4144-82E8-5FB682CC10F5}"
+              DTS:DTSID="{EF09A024-C4BD-47F3-94EC-96F915F1FFC9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -411,7 +475,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;a500_999&quot;"
-              DTS:DTSID="{4D7A146C-75D1-421C-BAA7-B79DDD0E2B2D}"
+              DTS:DTSID="{1B386BD9-B2C4-4DDE-A232-17E6BD9EA97E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -419,7 +483,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;n500_999&quot;"
-              DTS:DTSID="{6471AF20-7EF8-4512-92DA-F22C6D2386B9}"
+              DTS:DTSID="{00B521C0-3362-4DB4-974C-AD69DB467729}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -428,7 +492,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;f1000&quot;"
-              DTS:DTSID="{97C9E465-D3CB-4D7E-8210-29FC86CEB0D7}"
+              DTS:DTSID="{80F43659-9140-41C2-BF43-8C533D56B51C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -436,7 +500,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;e1000&quot;"
-              DTS:DTSID="{66BB65C3-44FB-4525-AD82-89F351C42650}"
+              DTS:DTSID="{0AAEF9C4-0E82-4B86-A6EA-9FC439B77B90}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -444,7 +508,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;q1000&quot;"
-              DTS:DTSID="{7D0A0039-0445-4F96-B833-4B7681096351}"
+              DTS:DTSID="{5FB6510A-F449-4E93-B63F-999109176C5D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -452,36 +516,27 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;a1000&quot;"
-              DTS:DTSID="{F98DB67A-C9EA-439A-BF30-6779561C8E41}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="20"
-              DTS:TextQualified="True"
-              DTS:ObjectName="&quot;n1000&quot;"
-              DTS:DTSID="{C68DFEBC-3E17-4B71-BDD0-E759684899E6}"
+              DTS:DTSID="{5DAE4B26-216F-4297-8E8F-C699096549C8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="4"
-              DTS:DataType="129"
+              DTS:DataType="20"
               DTS:TextQualified="True"
-              DTS:ObjectName="&quot;censtate&quot;"
-              DTS:DTSID="{92624F8D-2A95-4E43-87B2-89A7DEAAB767}"
+              DTS:ObjectName="&quot;n1000&quot;"
+              DTS:DTSID="{38DDC665-FDD7-45C7-AB48-87C435EDED0A}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Output Flat File Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[Threshold Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{9670F53B-BE75-427E-871C-1CE955A2FC8E}"
-      DTS:ObjectName="Output Flat File Connection Manager">
+      DTS:DTSID="{1B3733EF-F69C-400D-AB09-40E02C910CC1}"
+      DTS:ObjectName="Threshold Flat File Connection Manager">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[User::outFilePath]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[User::thresholdFilePath]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -490,7 +545,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Output\cbp05prs.csv">
+          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackages\DataTransform\Output\Threshold.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -498,8 +553,8 @@
               DTS:MaximumWidth="4"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="&quot;fipstate&quot;"
-              DTS:DTSID="{AD817085-2FC8-4BED-BC19-37995555CD10}"
+              DTS:ObjectName="&quot;uscode&quot;"
+              DTS:DTSID="{5187AA67-DFF0-48C8-8282-CD44C5E8F3E5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -508,7 +563,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;naics&quot;"
-              DTS:DTSID="{9B00565A-BF9D-4992-99E0-533D1A1BA6C0}"
+              DTS:DTSID="{8F2E6827-A9B9-4EA1-9604-A660965A1A1B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -517,7 +572,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;empflag&quot;"
-              DTS:DTSID="{3B34C0DF-D39B-4775-8596-01C996845D23}"
+              DTS:DTSID="{EC343C16-BF58-4744-8D60-B9E969457091}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -525,23 +580,79 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;emp&quot;"
-              DTS:DTSID="{8EC87843-A456-49CB-9AE7-B2CF44A32473}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="20"
-              DTS:TextQualified="True"
-              DTS:ObjectName="&quot;qp1&quot;"
-              DTS:DTSID="{D7418370-0322-4A57-8CBE-E26B617B879F}"
+              DTS:DTSID="{332008CB-FF7B-475A-AC68-8F0F05361910}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
               DTS:DataType="20"
               DTS:TextQualified="True"
-              DTS:ObjectName="&quot;ap&quot;"
-              DTS:DTSID="{730E7DDE-CD9C-4C8C-86E9-98AD1AB6C9A6}"
+              DTS:ObjectName="&quot;e1_4&quot;"
+              DTS:DTSID="{958064A4-F11C-4834-A724-CE2D601F25B7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Zero Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{054DAF47-B8ED-4E13-9568-46B37DBEC639}"
+      DTS:ObjectName="Zero Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::zeroFilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\Practice\SSIS\IntegrationPackages\DataTransform\Output\Zero.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;uscode&quot;"
+              DTS:DTSID="{8736EB60-0F9A-4EE0-A48A-94A68CD13B3E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;naics&quot;"
+              DTS:DTSID="{BA8F03BE-9592-4143-9600-F39A2B695010}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;empflag&quot;"
+              DTS:DTSID="{E4539C89-D4BA-45B1-A3E4-4EBA89F37793}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;emp&quot;"
+              DTS:DTSID="{DD1D959F-9B31-4591-95C4-3C855E4037EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;e1_4&quot;"
+              DTS:DTSID="{2DD48EFF-B4EE-4D19-8672-2C8C5DAC0C87}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -551,21 +662,39 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6D02016E-4888-4F41-81B5-96EA51E92DDF}"
+      DTS:DTSID="{879EB2D3-E9C1-4763-81EB-63BAB95AFE87}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="everythingFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">E:\Practice\SSIS\IntegrationPackages\DataTransform\Output\Everything.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6942440A-56A3-4049-AC35-535A0FE3E94A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="inputFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Working\cbp05prs.txt</DTS:VariableValue>
+        DTS:DataType="8">E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Working\cbp02us.txt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{826E7073-B1DD-46A7-BC27-549D69F919A1}"
+      DTS:DTSID="{C12F4EE1-A586-488C-80AA-81EB988F478A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="outFilePath">
+      DTS:ObjectName="thresholdFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">E:\Practice\SSIS\IntegrationPackages\CensusIntegration\Output\cbp05prs.csv</DTS:VariableValue>
+        DTS:DataType="8">E:\Practice\SSIS\IntegrationPackages\DataTransform\Output\Threshold.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FFE8C111-C2F3-457A-8D32-5ADAAA8EFA16}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="zeroFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">E:\Practice\SSIS\IntegrationPackages\DataTransform\Output\Zero.csv</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -573,7 +702,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{EDEF1534-EF9F-4E2E-BB2E-11D06C269625}"
+      DTS:DTSID="{8959A49E-DD99-4C2A-85D1-1376287B9764}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task">
@@ -583,12 +712,129 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Flat File Destination"
+              refId="Package\Data Flow Task\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[&quot;e1_4&quot;]"
+                      cachedDataType="i8"
+                      cachedName="&quot;e1_4&quot;"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;e1_4&quot;]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Zero]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Zero"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns["e1_4"]} == 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">["e1_4"] == 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Threshold]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Threshold"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns["e1_4"]} &lt;= 1000</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">["e1_4"] &lt;= 1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Everything Else]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Everything Else"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Everything Flat File Destination"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Destination"
               localeId="16393"
-              name="Flat File Destination">
+              name="Everything Flat File Destination">
               <properties>
                 <property
                   dataType="System.Boolean"
@@ -606,92 +852,82 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Output Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Output Flat File Connection Manager]"
+                  refId="Package\Data Flow Task\Everything Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Everything Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Everything Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                  refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input]"
                   hasSideEffects="true"
                   name="Flat File Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;empflag&quot;]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="3"
-                      cachedName="&quot;empflag&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;empflag&quot;]"
-                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;empflag&quot;]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;emp&quot;]"
-                      cachedDataType="i8"
-                      cachedName="&quot;emp&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;emp&quot;]"
-                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;emp&quot;]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;qp1&quot;]"
-                      cachedDataType="i8"
-                      cachedName="&quot;qp1&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;qp1&quot;]"
-                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;qp1&quot;]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;ap&quot;]"
-                      cachedDataType="i8"
-                      cachedName="&quot;ap&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;ap&quot;]"
-                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ap&quot;]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;fipstate&quot;]"
+                      refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;uscode&quot;]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="4"
-                      cachedName="&quot;fipstate&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;naics&quot;]"
-                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;fipstate&quot;]" />
+                      cachedName="&quot;uscode&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;uscode&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;uscode&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;naics&quot;]"
+                      refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;naics&quot;]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="8"
                       cachedName="&quot;naics&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;fipstate&quot;]"
+                      externalMetadataColumnId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;naics&quot;]"
                       lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;naics&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;empflag&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="&quot;empflag&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;empflag&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;empflag&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;emp&quot;]"
+                      cachedDataType="i8"
+                      cachedName="&quot;emp&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;emp&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;emp&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;e1_4&quot;]"
+                      cachedDataType="i8"
+                      cachedName="&quot;e1_4&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;e1_4&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;e1_4&quot;]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;fipstate&quot;]"
+                      refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;uscode&quot;]"
                       codePage="1252"
                       dataType="str"
                       length="4"
-                      name="&quot;fipstate&quot;" />
+                      name="&quot;uscode&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;naics&quot;]"
+                      refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;naics&quot;]"
                       codePage="1252"
                       dataType="str"
                       length="8"
                       name="&quot;naics&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;empflag&quot;]"
+                      refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;empflag&quot;]"
                       codePage="1252"
                       dataType="str"
                       length="3"
                       name="&quot;empflag&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;emp&quot;]"
+                      refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;emp&quot;]"
                       dataType="i8"
                       name="&quot;emp&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;qp1&quot;]"
+                      refId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;e1_4&quot;]"
                       dataType="i8"
-                      name="&quot;qp1&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;ap&quot;]"
-                      dataType="i8"
-                      name="&quot;ap&quot;" />
+                      name="&quot;e1_4&quot;" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -728,15 +964,15 @@
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;fipstate&quot;]"
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;uscode&quot;]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;fipstate&quot;]"
+                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;uscode&quot;]"
                       length="4"
-                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;fipstate&quot;]"
-                      name="&quot;fipstate&quot;"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;uscode&quot;]"
+                      name="&quot;uscode&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -814,33 +1050,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;qp1&quot;]"
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;e1_4&quot;]"
                       dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;qp1&quot;]"
-                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;qp1&quot;]"
-                      name="&quot;qp1&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ap&quot;]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;ap&quot;]"
-                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ap&quot;]"
-                      name="&quot;ap&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e1_4&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;e1_4&quot;]"
+                      name="&quot;e1_4&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -857,11 +1073,11 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;fipstate&quot;]"
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;uscode&quot;]"
                       codePage="1252"
                       dataType="str"
                       length="4"
-                      name="&quot;fipstate&quot;" />
+                      name="&quot;uscode&quot;" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;naics&quot;]"
                       codePage="1252"
@@ -878,6 +1094,10 @@
                       refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;emp&quot;]"
                       dataType="i8"
                       name="&quot;emp&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e1_4&quot;]"
+                      dataType="i8"
+                      name="&quot;e1_4&quot;" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;qp1&quot;]"
                       dataType="i8"
@@ -896,10 +1116,6 @@
                       dataType="str"
                       length="3"
                       name="&quot;f1_4&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;e1_4&quot;]"
-                      dataType="i8"
-                      name="&quot;e1_4&quot;" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;q1_4&quot;]"
                       dataType="i8"
@@ -1088,12 +1304,6 @@
                       refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;n1000&quot;]"
                       dataType="i8"
                       name="&quot;n1000&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;censtate&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4"
-                      name="&quot;censtate&quot;" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1125,13 +1335,236 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Data Flow Task\Threshold Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="16393"
+              name="Threshold Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Threshold Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Threshold Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Threshold Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;uscode&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="&quot;uscode&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;uscode&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;uscode&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;naics&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="&quot;naics&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;naics&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;naics&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;empflag&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="&quot;empflag&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;empflag&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;empflag&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;emp&quot;]"
+                      cachedDataType="i8"
+                      cachedName="&quot;emp&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;emp&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;emp&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;e1_4&quot;]"
+                      cachedDataType="i8"
+                      cachedName="&quot;e1_4&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;e1_4&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;e1_4&quot;]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;uscode&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="&quot;uscode&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;naics&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="&quot;naics&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;empflag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;empflag&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;emp&quot;]"
+                      dataType="i8"
+                      name="&quot;emp&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;e1_4&quot;]"
+                      dataType="i8"
+                      name="&quot;e1_4&quot;" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Zero Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="16393"
+              name="Zero Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Zero Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Zero Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Zero Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;uscode&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="&quot;uscode&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;uscode&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;uscode&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;naics&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="&quot;naics&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;naics&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;naics&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;empflag&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="&quot;empflag&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;empflag&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;empflag&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;emp&quot;]"
+                      cachedDataType="i8"
+                      cachedName="&quot;emp&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;emp&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;emp&quot;]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;e1_4&quot;]"
+                      cachedDataType="i8"
+                      cachedName="&quot;e1_4&quot;"
+                      externalMetadataColumnId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;e1_4&quot;]"
+                      lineageId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output].Columns[&quot;e1_4&quot;]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;uscode&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="&quot;uscode&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;naics&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="&quot;naics&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;empflag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="&quot;empflag&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;emp&quot;]"
+                      dataType="i8"
+                      name="&quot;emp&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;e1_4&quot;]"
+                      dataType="i8"
+                      name="&quot;e1_4&quot;" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
           </components>
           <paths>
             <path
+              refId="Package\Data Flow Task.Paths[Everything Else]"
+              endId="Package\Data Flow Task\Everything Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Everything Else"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[Everything Else]" />
+            <path
               refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+              endId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\Input Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Threshold]"
+              endId="Package\Data Flow Task\Threshold Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Threshold"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[Threshold]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Zero]"
+              endId="Package\Data Flow Task\Zero Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Zero"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[Zero]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1160,36 +1593,142 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="434,172" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Data Flow Task\Zero Flat File Destination"
+          TopLeft="109,271" />
         <NodeLayout
           Size="180,42"
           Id="Package\Data Flow Task\Input Flat File Source"
-          TopLeft="439,81" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Data Flow Task\Flat File Destination"
-          TopLeft="445,186" />
+          TopLeft="419,79" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="530,123">
+          Id="Package\Data Flow Task.Paths[Zero]"
+          TopLeft="459.5,214">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,63"
+              EndConnector="-252.5,57"
               Start="0,0"
-              End="0,55.5">
+              End="-252.5,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.5" />
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="-4,28.5" />
+                  <mssgle:LineSegment
+                    End="-248.5,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-248.5,28.5"
+                    Point2="-252.5,28.5"
+                    Point3="-252.5,32.5" />
+                  <mssgle:LineSegment
+                    End="-252.5,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,19.75,16,16"
+              BoundingBox="-145.55068359375,33.5,38.6013671875,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="510.25,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Data Flow Task\Everything Flat File Destination"
+          TopLeft="701,268" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Everything Else]"
+          TopLeft="557,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="256.5,54"
+              Start="0,0"
+              End="256.5,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9310344827586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.9310344827586"
+                    Point2="0,27.9310344827586"
+                    Point3="4,27.9310344827586" />
+                  <mssgle:LineSegment
+                    End="252.5,27.9310344827586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="252.5,27.9310344827586"
+                    Point2="256.5,27.9310344827586"
+                    Point3="256.5,31.9310344827586" />
+                  <mssgle:LineSegment
+                    End="256.5,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="85.13,32.9310344827586,86.24,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Data Flow Task\Threshold Flat File Destination"
+          TopLeft="401,271" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Threshold]"
+          TopLeft="511.75,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.951640625,16.75,61.90328125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
